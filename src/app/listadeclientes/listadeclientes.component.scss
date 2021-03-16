@@ -1,0 +1,26 @@
+.photo{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: relative;
+    top: -50px;
+    left: calc(50% - 50px);
+    margin-top: 50px;
+}
+.buscador{
+    width: 200px;
+    color: brown;
+    
+}
+.fondo{
+    background-attachment:fixed;
+	background-color: #645862;
+	background-image: url(img/abstrac.jpg);
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	cursor: default;
+	text-align: center;
+	width: 100%;
+	float: left;
+}

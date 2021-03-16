@@ -1,0 +1,62 @@
+<div class="body">  
+    <div class="container" style="color: aliceblue;" >
+      <h1 style="text-align: center;" *ngIf="!editable">Agregar un cliente</h1>
+      <h1 style="text-align: center;" *ngIf="editable">Actualizar Cliente</h1>
+        <div class="abs-center">
+          <form [formGroup]="formulariocliente">
+              <div class="row">
+                  <div class="col-sm-6">
+                      <label for="">Nombre Completo:</label>
+                     <input type="text" placeholder="ingrese nombre" class="form-control"formControlName="Nombre">
+                     <div *ngIf="formulariocliente.controls['Nombre'].invalid && formulariocliente.controls['Nombre'].dirty" class="alert alert-danger" role="alert">
+                        <span *ngIf="formulariocliente.controls['Nombre'].errors.required"> El nombre completo es requerido</span>
+                     </div>
+                  </div> 
+                  <div class="col-sm-6">
+                      <label for="">Cedula:</label>
+                     <input type="text" placeholder="cedula" class="form-control" formControlName="Cedula">
+                     <div *ngIf="formulariocliente.controls['Cedula'].invalid && formulariocliente.controls['Cedula'].dirty" class="alert alert-danger" role="alert">
+                        <span *ngIf="formulariocliente.controls['Cedula'].errors.required">Es requerido este campo</span>
+                     </div>
+                  </div> 
+               </div>  
+               <div class="row">
+                  <div class="col-sm-6">
+                      <label for="">Direccion:</label>
+                     <input type="text" placeholder="direccion" class="form-control" formControlName="Direccion">
+                     <div *ngIf="formulariocliente.controls['Direccion'].invalid && formulariocliente.controls['Direccion'].dirty" class="alert alert-danger" role="alert">
+                        <span *ngIf="formulariocliente.controls['Direccion'].errors.required"> El nombre completo es requerido</span>
+                     </div>
+                  </div> 
+                  <div class="col-sm-6">
+                      <label for="">Telefono:</label>
+                      <input type="tel" placeholder="Telefono" class="form-control" formControlName="Telefono">
+                  </div> 
+               </div>
+               <div class="row">
+                  <div class="col-sm-6">
+                      <label for="">Correo:</label>
+                      <input type="email" placeholder="Correo" class="form-control" formControlName="Correo">
+                  </div> 
+               </div>
+               <div class="row">
+                  <div class="col-sm-6">
+                    <label for="formFile" class="form-label">Imagen</label>
+                    <input class="form-control-file" (change)="uploadimage($event)" type="file" id="formFile" formControlName="imgURL">
+                  </div> 
+               </div>
+               <div class="row">
+                    <div class="col-sm-6">
+                        <br>
+                        <progressbar [value]="subida" type="danger" [striped]="true">{{subida}}%</progressbar>
+                    </div>
+               </div>
+               <br>
+               <button *ngIf="!editable" (click)="agregarcliente()" [disabled]="formulariocliente.invalid"class="btn btn-primary">agregar</button>
+               <button *ngIf="editable" (click)="editar()" [disabled]="formulariocliente.invalid"class="btn btn-primary">editar</button>
+
+          </form>
+         
+        </div>
+      </div>
+</div>

@@ -1,0 +1,11 @@
+
+nav ul li a:hover {
+	background:red;
+	border-radius: 6px;
+}
+
+nav ul li a.active {
+	background: red;
+	color: #fff;
+	border-radius: 6px;
+}

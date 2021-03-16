@@ -1,0 +1,28 @@
+<div class="body">
+  <div class="login-box">
+    <img src="assets/logo-login.png" class="avatar">
+    <h1>Total Madera</h1>
+    <form [formGroup]="loginForm">
+      <!-- USERNAME INPUT -->
+      <label for="username">Correo</label>
+      <input type="email" formControlName="email" placeholder="Ingresa el Correo">
+      <!-- PASSWORD INPUT -->
+      <label for="password">Contraseña</label>
+      <input type="password" formControlName="password" placeholder="Ingrese la contraseña">
+      <input type="submit" [disabled]="!loginForm.valid" (click)="iniciarsession()" value="Log In">
+      <a href="#">Lost your Password?</a><br>
+      <a href="#">Don't have An account?</a>
+    </form>    
+  </div>
+  <ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+>
+  <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>
+
+</div>
+ 
+
